@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>有机作业下载</title>
+</head>
+<body>
+<script>
+    function download(){
+        sid = document.getElementById("sid").value
+        window.open(sid + ".zip")
+    }
+</script>
+学号：<input id="sid" type="text" />
+<input type="submit" value="下载" onclick="download()" />
+</body>
+</html>
