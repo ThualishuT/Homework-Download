@@ -3,15 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title>有机作业下载</title>
+    <style>
+        #sid
+        {
+            text-align: center;
+            width: 50%;
+            outline-style: none;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        div
+        {
+            width: 20%;
+            margin: auto;
+        }
+    </style>
 </head>
 <body>
 <script>
     function download(){
-        sid = document.getElementById("sid").value
-        window.open(sid + ".zip")
+        let sid = document.getElementById("sid").value
+        if (Number(sid) != NaN && sid.length === 9) {
+            try{
+                window.open(sid + ".zip")
+            }
+            catch (err){
+                alert("学号输入错误！")
+            }
+        }
+        else {
+            alert("学号输入错误！")
+        }
+
     }
 </script>
-学号：<input id="sid" type="text" />
-<input type="submit" value="下载" onclick="download()" />
+<div>
+    <label for="sid">学号：</label>
+    <input id="sid" type="text" />
+    <input id="download" type="submit" value="下载" onclick="download()" />
+</div>
 </body>
 </html>
